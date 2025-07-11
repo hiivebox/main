@@ -523,9 +523,9 @@ var beepbox = (function (exports) {
     ]);
     Config.blackKeyNameParents = [-1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, -1];
     Config.tempoMin = 1;
-    Config.tempoMax = 500;
-    Config.octaveMin = -2;
-    Config.octaveMax = 2;
+    Config.tempoMax = 1000;
+    Config.octaveMin = -5;
+    Config.octaveMax = 5;
     Config.echoDelayRange = 24;
     Config.echoDelayStepTicks = 4;
     Config.echoSustainRange = 8;
@@ -553,7 +553,7 @@ var beepbox = (function (exports) {
         { name: "÷6", stepsPerBeat: 6, roundUpThresholds: null },
         { name: "÷8", stepsPerBeat: 8, roundUpThresholds: null },
         { name: "÷12", stepsPerBeat: 12, roundUpThresholds: null },
-        { name: "freehand", stepsPerBeat: 24, roundUpThresholds: null },
+        { name: "freehand (÷24)", stepsPerBeat: 24, roundUpThresholds: null },
     ]);
     Config.instrumentTypeNames = ["chip", "FM", "noise", "spectrum", "drumset", "harmonics", "PWM", "Picked String", "supersaw", "custom chip", "mod", "FM6op"];
     Config.instrumentTypeHasSpecialInterval = [true, true, false, false, false, true, false, false, false, false, false];
@@ -785,7 +785,7 @@ var beepbox = (function (exports) {
         { name: "custom interval", customInterval: true, arpeggiates: false, strumParts: 0, singleTone: true },
         { name: "monophonic", customInterval: false, arpeggiates: false, strumParts: 0, singleTone: true }
     ]);
-    Config.maxChordSize = 9;
+    Config.maxChordSize = 15;
     Config.operatorCount = 4;
     Config.maxPitchOrOperatorCount = Math.max(_a$1.maxChordSize, _a$1.operatorCount + 2);
     Config.algorithms = toNameMap([
@@ -878,7 +878,7 @@ var beepbox = (function (exports) {
         { name: "75×", mult: 75.0, hzOffset: 0.0, amplitudeSign: 1.0 },
         { name: "100×", mult: 100.0, hzOffset: 0.0, amplitudeSign: 1.0 },
         { name: "128×", mult: 128.0, hzOffset: 0.0, amplitudeSign: 1.0 },
-        { name: "256×", mult: 250.0, hzOffset: 0.0, amplitudeSign: 1.0 },
+        { name: "256×", mult: 256.0, hzOffset: 0.0, amplitudeSign: 1.0 },
     ]);
     Config.envelopes = toNameMap([
         { name: "none", type: 0, speed: 1.0 },
